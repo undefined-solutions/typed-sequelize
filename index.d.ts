@@ -2972,7 +2972,7 @@ declare module sequelize {
     [Model<any, any>, Model<any, any>, string, string];
   export type Order = string | fn | col | literal | OrderItem[];
 
-  export type FindAttributeOptions = 
+  export type FindAttributeOptions =
     Array<string | [string | fn, string]> |
     {
       exclude: Array<string>;
@@ -4767,6 +4767,11 @@ declare module sequelize {
      * Converts camelCased model names to underscored tablenames if true. Default false.
      */
     underscoredAll?: boolean;
+
+    /**
+     * Indicates if the model's table has a trigger associated with it. Default false.
+     */
+    hasTrigger?: boolean;
 
     /**
      * If freezeTableName is true, sequelize will not try to alter the DAO name to get the table name.
